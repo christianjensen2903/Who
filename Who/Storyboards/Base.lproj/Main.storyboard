@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Brusher-Regular.otf">
+            <string>Brusher-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Who" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXj-xf-Xfs">
+                                <rect key="frame" x="0.0" y="50" width="375" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="dKH-WF-UNl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Brusher-Regular" family="Brusher" pointSize="100"/>
+                                <color key="textColor" red="0.43921568630000002" green="0.94901960780000005" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWQ-Nm-78s" customClass="ContinueButton" customModule="Who" customModuleProvider="target">
+                                <rect key="frame" x="62.5" y="477" width="250" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="4bR-AY-Dcy"/>
+                                    <constraint firstAttribute="height" constant="60" id="To8-Zz-ofR"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="moD-L2-nWZ"/>
+                                    <constraint firstAttribute="width" constant="250" id="yP6-Hj-mCa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="0.97647058819999999" green="0.50980392159999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="0mI-N6-hS8" kind="show" id="E1H-oo-hEm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRR-G4-uXm" customClass="StartButton" customModule="Who" customModuleProvider="target">
+                                <rect key="frame" x="62.5" y="557" width="250" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="7Zx-y7-71b"/>
+                                    <constraint firstAttribute="width" constant="250" id="LRU-Nt-Beg"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="TuG-1f-fyq"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="sFf-R7-4ni"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                <state key="normal" title="Start now">
+                                    <color key="titleColor" red="0.43921568630000002" green="0.94901960780000005" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hRR-G4-uXm" secondAttribute="bottom" constant="50" id="3ms-1V-bBk"/>
+                            <constraint firstItem="XXj-xf-Xfs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="7Wm-MR-z8s"/>
+                            <constraint firstItem="XXj-xf-Xfs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9LW-zk-z6w"/>
+                            <constraint firstItem="hRR-G4-uXm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G3n-fP-hY9"/>
+                            <constraint firstItem="hRR-G4-uXm" firstAttribute="top" secondItem="YWQ-Nm-78s" secondAttribute="bottom" constant="20" id="JRL-zz-uAb"/>
+                            <constraint firstItem="XXj-xf-Xfs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dH5-0X-8I1"/>
+                            <constraint firstItem="YWQ-Nm-78s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uXK-Tn-sRc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="89" y="18"/>
+        </scene>
+        <!--QuestionVC-->
+        <scene sceneID="NVO-tf-hWV">
+            <objects>
+                <viewController id="0mI-N6-hS8" customClass="QuestionVC" customModule="Who" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MG7-wR-Wio">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5wG-Vu-lhO" customClass="Question" customModule="Who" customModuleProvider="target">
+                                <rect key="frame" x="60" y="120" width="255" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="JTc-iV-C3m"/>
+                                </constraints>
+                                <state key="normal" title="Who has to take their shirts off?"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ce-ez-Pgl" customClass="NameButton" customModule="Who" customModuleProvider="target">
+                                <rect key="frame" x="60" y="547" width="255" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="CyK-r1-g66"/>
+                                </constraints>
+                                <state key="normal" title="name"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adh-Iu-cLg" customClass="NameButton" customModule="Who" customModuleProvider="target">
+                                <rect key="frame" x="60" y="467" width="255" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="BPD-Bs-fJX"/>
+                                </constraints>
+                                <state key="normal" title="name"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGw-lN-Wcg" customClass="NameButton" customModule="Who" customModuleProvider="target">
+                                <rect key="frame" x="60" y="387" width="255" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="oCG-08-iUS"/>
+                                </constraints>
+                                <state key="normal" title="name"/>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zsy-RG-xbU">
+                                <rect key="frame" x="0.0" y="607" width="240" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Lgg-Sd-AcO" firstAttribute="bottom" secondItem="0ce-ez-Pgl" secondAttribute="bottom" constant="60" id="CIC-vw-8CX"/>
+                            <constraint firstItem="0ce-ez-Pgl" firstAttribute="leading" secondItem="Lgg-Sd-AcO" secondAttribute="leading" constant="60" id="DXk-0A-g5X"/>
+                            <constraint firstItem="5wG-Vu-lhO" firstAttribute="top" secondItem="Lgg-Sd-AcO" secondAttribute="top" constant="100" id="G22-V4-Sz5"/>
+                            <constraint firstItem="wGw-lN-Wcg" firstAttribute="leading" secondItem="Lgg-Sd-AcO" secondAttribute="leading" constant="60" id="Jtt-lS-nMF"/>
+                            <constraint firstItem="Lgg-Sd-AcO" firstAttribute="trailing" secondItem="adh-Iu-cLg" secondAttribute="trailing" constant="60" id="QIu-bR-PYl"/>
+                            <constraint firstItem="adh-Iu-cLg" firstAttribute="leading" secondItem="Lgg-Sd-AcO" secondAttribute="leading" constant="60" id="ae5-dg-bFE"/>
+                            <constraint firstItem="Lgg-Sd-AcO" firstAttribute="trailing" secondItem="wGw-lN-Wcg" secondAttribute="trailing" constant="60" id="g8k-e3-69r"/>
+                            <constraint firstItem="Lgg-Sd-AcO" firstAttribute="trailing" secondItem="0ce-ez-Pgl" secondAttribute="trailing" constant="60" id="k5M-h8-YtF"/>
+                            <constraint firstItem="0ce-ez-Pgl" firstAttribute="top" secondItem="adh-Iu-cLg" secondAttribute="bottom" constant="20" id="lSV-Od-XGx"/>
+                            <constraint firstItem="adh-Iu-cLg" firstAttribute="top" secondItem="wGw-lN-Wcg" secondAttribute="bottom" constant="20" id="lq9-Mn-iNE"/>
+                            <constraint firstItem="Lgg-Sd-AcO" firstAttribute="trailing" secondItem="5wG-Vu-lhO" secondAttribute="trailing" constant="60" id="rna-cw-hmA"/>
+                            <constraint firstItem="5wG-Vu-lhO" firstAttribute="leading" secondItem="Lgg-Sd-AcO" secondAttribute="leading" constant="60" id="wjx-Nl-KlQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lgg-Sd-AcO"/>
+                    </view>
+                    <connections>
+                        <outlet property="question" destination="5wG-Vu-lhO" id="du3-Mx-fEE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ook-LE-TkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="805.60000000000002" y="-208.24587706146929"/>
+        </scene>
+    </scenes>
+</document>

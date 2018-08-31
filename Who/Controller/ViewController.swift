@@ -9,10 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        view.setGradientBackground(colorOne: Colors.dustyPink, colorTwo: Colors.pink)
     }
 
     override func didReceiveMemoryWarning() {
