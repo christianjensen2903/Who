@@ -27,6 +27,7 @@ class QuestionVC: UIViewController {
     var option1 = 0
     var option2 = 0
     var option3 = 0
+    var winner = ""
     
     let defualt = UserDefaults.standard
     
@@ -35,7 +36,6 @@ class QuestionVC: UIViewController {
         super.viewDidLoad()
         
         filterQuestions()
-        makeTextAutoSize()
         setLayout()
         
         
@@ -58,7 +58,6 @@ class QuestionVC: UIViewController {
         view.setGradientBackground(colorOne: Colors.dustyPink, colorTwo: Colors.pink)
         question.contentEdgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
         question.isUserInteractionEnabled = false
-        question.titleLabel?.textAlignment = .center
         progressBar.backgroundColor = Colors.green
         
         // Set question label
@@ -75,22 +74,7 @@ class QuestionVC: UIViewController {
         progressBar.frame.size.width = (view.frame.size.width / CGFloat(numberOfPlayers)) * CGFloat(currentPlayer)
         
     }
-    
-    // Make the button size the text according to the length
-    func makeTextAutoSize() {
-        topNameButton.titleLabel?.numberOfLines = 1
-        topNameButton.titleLabel?.minimumScaleFactor = 0.5
-        topNameButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        
-        middleNameButton.titleLabel?.numberOfLines = 1
-        middleNameButton.titleLabel?.minimumScaleFactor = 0.5
-        middleNameButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        
-        buttomNameButton.titleLabel?.numberOfLines = 1
-        buttomNameButton.titleLabel?.minimumScaleFactor = 0.5
-        buttomNameButton.titleLabel?.adjustsFontSizeToFitWidth = true
-    }
-    
+
     // Select questions selected and suited for the game
     func filterQuestions() {
         
@@ -119,7 +103,6 @@ class QuestionVC: UIViewController {
             for j in 1...playersNeeded {
                 
                 
-                
                 let randomNumber = Int(arc4random_uniform(UInt32(playersAvailable.count)))
                 
                 // Add player according to number in string
@@ -144,12 +127,18 @@ class QuestionVC: UIViewController {
 
             namesUsed.append(buttonNames)
             
+            var firstNamesSorted = [String]()
+            var secondNamesSorted = [String]()
+            var thirdNamesSorted = [String]()
+            
             // Set button tittle
             if i == 1 {
                 topNameButton.setTitle(buttonString, for: .normal)
                 i += 1
             } else if i == 2 {
-                if namesUsed[1] != namesUsed[0] {
+                firstNamesSorted = namesUsed[0].sorted()
+                secondNamesSorted = namesUsed[1].sorted()
+                if secondNamesSorted != firstNamesSorted {
                     middleNameButton.setTitle(buttonString, for: .normal)
                     i += 1
                 } else {
@@ -157,7 +146,8 @@ class QuestionVC: UIViewController {
                 }
                 
             } else if i == 3 {
-                if namesUsed[2] != namesUsed[0] && namesUsed[2] != namesUsed[1] {
+                thirdNamesSorted = namesUsed[2].sorted()
+                if thirdNamesSorted != firstNamesSorted && thirdNamesSorted != secondNamesSorted {
                     buttomNameButton.setTitle(buttonString, for: .normal)
                     i += 1
                 } else {
@@ -195,19 +185,33 @@ class QuestionVC: UIViewController {
         let somethingWentWrong = "There went something wrong, couldn't find the winner, please continue"
         
         if option1 == maxVotes {
-            
+            winner = topNameButton.titleLabel?.text ?? somethingWentWrong
             print ("The winner is\(topNameButton.titleLabel?.text ?? somethingWentWrong)")
         } else if option2 == maxVotes {
-            
+            winner = middleNameButton.titleLabel?.text ?? somethingWentWrong
             print ("The winner is\(middleNameButton.titleLabel?.text ?? somethingWentWrong)")
         } else {
-            
+            winner = buttomNameButton.titleLabel?.text ?? somethingWentWrong
             print ("The winner is\(buttomNameButton.titleLabel?.text ?? somethingWentWrong)")
         }
+        
+        performSegue(withIdentifier: "winnerSegue", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        <#code#>
+        if segue.identifier == "winnerSegue" {
+            if let destinationVC = segue.destination as? WinnerVC {
+                destinationVC.winnerName = winner
+            }
+        }
+    }
+    
+    func refreshView() {
+        
+        // Calling the viewDidLoad and viewWillAppear methods to "refresh" the VC and run through the code within the methods themselves
+        self.viewDidLoad()
+        //self.viewWillAppear(true)
+        
     }
     
 

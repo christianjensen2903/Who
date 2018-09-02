@@ -27,6 +27,9 @@ class Question: UIButton {
         setTitleColor(UIColor.white, for: .normal)
         backgroundColor = Colors.grey
         titleLabel?.font = UIFont(name: "Georgia", size: 20)
+        titleLabel?.textAlignment = .center
+        titleLabel?.minimumScaleFactor = 0.5
+        titleLabel?.adjustsFontSizeToFitWidth = true
         layer.cornerRadius = 10
         layer.borderWidth = 0.0
         layer.shadowColor = UIColor.black.cgColor
