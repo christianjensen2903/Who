@@ -11,6 +11,9 @@
 		770EA8EA2139A09300CFE2A6 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770EA8E92139A09300CFE2A6 /* Question.swift */; };
 		770EA8EC2139A81400CFE2A6 /* QuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770EA8EB2139A81400CFE2A6 /* QuestionVC.swift */; };
 		770EA8EE2139AADF00CFE2A6 /* NameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770EA8ED2139AADF00CFE2A6 /* NameButton.swift */; };
+		779871832139F1C00029A6C3 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779871822139F1C00029A6C3 /* SettingsVC.swift */; };
+		77987185213A98050029A6C3 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77987184213A98050029A6C3 /* QuestionModel.swift */; };
+		77987187213A99030029A6C3 /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77987186213A99030029A6C3 /* QuestionBank.swift */; };
 		77C714AB21381EE10040506F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C714AA21381EE10040506F /* AppDelegate.swift */; };
 		77C714AD21381EE10040506F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C714AC21381EE10040506F /* ViewController.swift */; };
 		77C714B021381EE10040506F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77C714AE21381EE10040506F /* Main.storyboard */; };
@@ -28,6 +31,9 @@
 		770EA8E92139A09300CFE2A6 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		770EA8EB2139A81400CFE2A6 /* QuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionVC.swift; sourceTree = "<group>"; };
 		770EA8ED2139AADF00CFE2A6 /* NameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameButton.swift; sourceTree = "<group>"; };
+		779871822139F1C00029A6C3 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		77987184213A98050029A6C3 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
+		77987186213A99030029A6C3 /* QuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
 		77C714A721381EE10040506F /* Who.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Who.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77C714AA21381EE10040506F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77C714AC21381EE10040506F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				77C714CB213875390040506F /* Constants.swift */,
+				77987184213A98050029A6C3 /* QuestionModel.swift */,
+				77987186213A99030029A6C3 /* QuestionBank.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -110,6 +118,7 @@
 			children = (
 				77C714AC21381EE10040506F /* ViewController.swift */,
 				770EA8EB2139A81400CFE2A6 /* QuestionVC.swift */,
+				779871822139F1C00029A6C3 /* SettingsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -206,13 +215,16 @@
 			files = (
 				770EA8E8213980AD00CFE2A6 /* ContinueButton.swift in Sources */,
 				77C714AD21381EE10040506F /* ViewController.swift in Sources */,
+				77987185213A98050029A6C3 /* QuestionModel.swift in Sources */,
 				770EA8EE2139AADF00CFE2A6 /* NameButton.swift in Sources */,
 				770EA8EA2139A09300CFE2A6 /* Question.swift in Sources */,
+				77987187213A99030029A6C3 /* QuestionBank.swift in Sources */,
 				77C714AB21381EE10040506F /* AppDelegate.swift in Sources */,
 				770EA8EC2139A81400CFE2A6 /* QuestionVC.swift in Sources */,
 				77C714CA2138734A0040506F /* UIView + Extension.swift in Sources */,
 				77C714CF21387CF30040506F /* StartButton.swift in Sources */,
 				77C714CC213875390040506F /* Constants.swift in Sources */,
+				779871832139F1C00029A6C3 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

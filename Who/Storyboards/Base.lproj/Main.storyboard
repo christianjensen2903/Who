@@ -60,6 +60,9 @@
                                 <state key="normal" title="Start now">
                                     <color key="titleColor" red="0.43921568630000002" green="0.94901960780000005" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="ud8-c0-0PF" kind="show" id="a2O-GW-oAN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -79,6 +82,21 @@
             </objects>
             <point key="canvasLocation" x="89" y="18"/>
         </scene>
+        <!--SettingsVC-->
+        <scene sceneID="dTA-1y-50h">
+            <objects>
+                <viewController id="ud8-c0-0PF" customClass="SettingsVC" customModule="Who" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LRn-Yc-4Ua">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="SDS-9y-QHa"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hXI-VH-INQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="806" y="520"/>
+        </scene>
         <!--QuestionVC-->
         <scene sceneID="NVO-tf-hWV">
             <objects>
@@ -92,33 +110,45 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="JTc-iV-C3m"/>
                                 </constraints>
-                                <state key="normal" title="Who has to take their shirts off?"/>
+                                <state key="normal" title="Question text"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ce-ez-Pgl" customClass="NameButton" customModule="Who" customModuleProvider="target">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ce-ez-Pgl" customClass="NameButton" customModule="Who" customModuleProvider="target">
                                 <rect key="frame" x="60" y="547" width="255" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="CyK-r1-g66"/>
                                 </constraints>
                                 <state key="normal" title="name"/>
+                                <connections>
+                                    <action selector="nameButtonPressed:" destination="0mI-N6-hS8" eventType="touchUpInside" id="ODY-ej-sr8"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adh-Iu-cLg" customClass="NameButton" customModule="Who" customModuleProvider="target">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adh-Iu-cLg" customClass="NameButton" customModule="Who" customModuleProvider="target">
                                 <rect key="frame" x="60" y="467" width="255" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="BPD-Bs-fJX"/>
                                 </constraints>
                                 <state key="normal" title="name"/>
+                                <connections>
+                                    <action selector="nameButtonPressed:" destination="0mI-N6-hS8" eventType="touchUpInside" id="Rvd-Kb-3ph"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGw-lN-Wcg" customClass="NameButton" customModule="Who" customModuleProvider="target">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGw-lN-Wcg" customClass="NameButton" customModule="Who" customModuleProvider="target">
                                 <rect key="frame" x="60" y="387" width="255" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="oCG-08-iUS"/>
                                 </constraints>
                                 <state key="normal" title="name"/>
+                                <connections>
+                                    <action selector="nameButtonPressed:" destination="0mI-N6-hS8" eventType="touchUpInside" id="hTj-Dn-jce"/>
+                                </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zsy-RG-xbU">
-                                <rect key="frame" x="0.0" y="607" width="240" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sVI-Q7-h33">
+                                <rect key="frame" x="0.0" y="653" width="30" height="14"/>
+                                <color key="backgroundColor" red="0.92706394199999997" green="0.72759377960000005" blue="0.064024783670000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14" id="3Ri-3q-KO7"/>
+                                    <constraint firstAttribute="width" constant="30" id="LMK-rb-afE"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -126,7 +156,9 @@
                             <constraint firstItem="Lgg-Sd-AcO" firstAttribute="bottom" secondItem="0ce-ez-Pgl" secondAttribute="bottom" constant="60" id="CIC-vw-8CX"/>
                             <constraint firstItem="0ce-ez-Pgl" firstAttribute="leading" secondItem="Lgg-Sd-AcO" secondAttribute="leading" constant="60" id="DXk-0A-g5X"/>
                             <constraint firstItem="5wG-Vu-lhO" firstAttribute="top" secondItem="Lgg-Sd-AcO" secondAttribute="top" constant="100" id="G22-V4-Sz5"/>
+                            <constraint firstItem="sVI-Q7-h33" firstAttribute="leading" secondItem="Lgg-Sd-AcO" secondAttribute="leading" id="Gfj-zZ-QnB"/>
                             <constraint firstItem="wGw-lN-Wcg" firstAttribute="leading" secondItem="Lgg-Sd-AcO" secondAttribute="leading" constant="60" id="Jtt-lS-nMF"/>
+                            <constraint firstItem="sVI-Q7-h33" firstAttribute="bottom" secondItem="Lgg-Sd-AcO" secondAttribute="bottom" id="PXM-TZ-jmz"/>
                             <constraint firstItem="Lgg-Sd-AcO" firstAttribute="trailing" secondItem="adh-Iu-cLg" secondAttribute="trailing" constant="60" id="QIu-bR-PYl"/>
                             <constraint firstItem="adh-Iu-cLg" firstAttribute="leading" secondItem="Lgg-Sd-AcO" secondAttribute="leading" constant="60" id="ae5-dg-bFE"/>
                             <constraint firstItem="Lgg-Sd-AcO" firstAttribute="trailing" secondItem="wGw-lN-Wcg" secondAttribute="trailing" constant="60" id="g8k-e3-69r"/>
@@ -139,12 +171,31 @@
                         <viewLayoutGuide key="safeArea" id="Lgg-Sd-AcO"/>
                     </view>
                     <connections>
+                        <outlet property="buttomNameButton" destination="0ce-ez-Pgl" id="r1K-hP-QuJ"/>
+                        <outlet property="middleNameButton" destination="adh-Iu-cLg" id="fUK-eI-7R7"/>
+                        <outlet property="progressBar" destination="sVI-Q7-h33" id="diW-Dk-paZ"/>
                         <outlet property="question" destination="5wG-Vu-lhO" id="du3-Mx-fEE"/>
+                        <outlet property="topNameButton" destination="wGw-lN-Wcg" id="TlL-4T-hXQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ook-LE-TkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="805.60000000000002" y="-208.24587706146929"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jMg-h0-MLB">
+            <objects>
+                <viewController id="Jo1-wb-g7u" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L0g-Vp-wIg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="dqx-H0-WhQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wIp-15-2cz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1568" y="-213"/>
         </scene>
     </scenes>
 </document>
