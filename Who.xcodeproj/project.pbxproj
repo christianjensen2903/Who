@@ -11,6 +11,9 @@
 		770EA8EA2139A09300CFE2A6 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770EA8E92139A09300CFE2A6 /* Question.swift */; };
 		770EA8EC2139A81400CFE2A6 /* QuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770EA8EB2139A81400CFE2A6 /* QuestionVC.swift */; };
 		770EA8EE2139AADF00CFE2A6 /* NameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770EA8ED2139AADF00CFE2A6 /* NameButton.swift */; };
+		771109AC213D7BBB00BD4595 /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771109AB213D7BBB00BD4595 /* DropDownButton.swift */; };
+		771109AE213D7C1300BD4595 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771109AD213D7C1300BD4595 /* DropDownView.swift */; };
+		771109B0213D7EEB00BD4595 /* GradientTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771109AF213D7EEB00BD4595 /* GradientTableView.swift */; };
 		779871832139F1C00029A6C3 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779871822139F1C00029A6C3 /* SettingsVC.swift */; };
 		77987185213A98050029A6C3 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77987184213A98050029A6C3 /* QuestionModel.swift */; };
 		77987187213A99030029A6C3 /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77987186213A99030029A6C3 /* QuestionBank.swift */; };
@@ -35,6 +38,9 @@
 		770EA8E92139A09300CFE2A6 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		770EA8EB2139A81400CFE2A6 /* QuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionVC.swift; sourceTree = "<group>"; };
 		770EA8ED2139AADF00CFE2A6 /* NameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameButton.swift; sourceTree = "<group>"; };
+		771109AB213D7BBB00BD4595 /* DropDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButton.swift; sourceTree = "<group>"; };
+		771109AD213D7C1300BD4595 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
+		771109AF213D7EEB00BD4595 /* GradientTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientTableView.swift; sourceTree = "<group>"; };
 		779871822139F1C00029A6C3 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		77987184213A98050029A6C3 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		77987186213A99030029A6C3 /* QuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
@@ -120,6 +126,9 @@
 				770EA8E92139A09300CFE2A6 /* Question.swift */,
 				770EA8ED2139AADF00CFE2A6 /* NameButton.swift */,
 				7798718A213C30FD0029A6C3 /* AndTheWinnerIsText.swift */,
+				771109AB213D7BBB00BD4595 /* DropDownButton.swift */,
+				771109AD213D7C1300BD4595 /* DropDownView.swift */,
+				771109AF213D7EEB00BD4595 /* GradientTableView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -230,11 +239,14 @@
 				77987185213A98050029A6C3 /* QuestionModel.swift in Sources */,
 				770EA8EE2139AADF00CFE2A6 /* NameButton.swift in Sources */,
 				770EA8EA2139A09300CFE2A6 /* Question.swift in Sources */,
+				771109AE213D7C1300BD4595 /* DropDownView.swift in Sources */,
 				7798718F213C5A710029A6C3 /* ActionBank.swift in Sources */,
+				771109B0213D7EEB00BD4595 /* GradientTableView.swift in Sources */,
 				7798718D213C5A640029A6C3 /* ActionModel.swift in Sources */,
 				77987187213A99030029A6C3 /* QuestionBank.swift in Sources */,
 				77C714AB21381EE10040506F /* AppDelegate.swift in Sources */,
 				770EA8EC2139A81400CFE2A6 /* QuestionVC.swift in Sources */,
+				771109AC213D7BBB00BD4595 /* DropDownButton.swift in Sources */,
 				77C714CA2138734A0040506F /* UIView + Extension.swift in Sources */,
 				77C714CF21387CF30040506F /* StartButton.swift in Sources */,
 				77C714CC213875390040506F /* Constants.swift in Sources */,
