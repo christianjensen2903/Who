@@ -186,13 +186,10 @@ class QuestionVC: UIViewController {
         
         if option1 == maxVotes {
             winner = topNameButton.titleLabel?.text ?? somethingWentWrong
-            print ("The winner is\(topNameButton.titleLabel?.text ?? somethingWentWrong)")
         } else if option2 == maxVotes {
             winner = middleNameButton.titleLabel?.text ?? somethingWentWrong
-            print ("The winner is\(middleNameButton.titleLabel?.text ?? somethingWentWrong)")
         } else {
             winner = buttomNameButton.titleLabel?.text ?? somethingWentWrong
-            print ("The winner is\(buttomNameButton.titleLabel?.text ?? somethingWentWrong)")
         }
         
         performSegue(withIdentifier: "winnerSegue", sender: self)
@@ -213,6 +210,4 @@ class QuestionVC: UIViewController {
         //self.viewWillAppear(true)
         
     }
-    
-
 }

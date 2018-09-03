@@ -15,9 +15,9 @@ class QuestionBank {
     init() {
         
         // Standard questions
-        list.append(QuestionModel(text: "Who has to take off their shirt?", category: "Standard", numberOfPeople: 4))
+        list.append(QuestionModel(text: "Who has to take off their shirt?", category: "Standard", numberOfPeople: 1))
         list.append(QuestionModel(text: "Who has to kiss?", category: "Standard", numberOfPeople : 2))
-        list.append(QuestionModel(text: "Who has to do the Eiffel Tower?", category: "Standard", numberOfPeople : 1))
+        list.append(QuestionModel(text: "Who has to do the Eiffel Tower?", category: "Standard", numberOfPeople : 3))
         list.append(QuestionModel(text: "Who has to take a shot?", category: "Standard", numberOfPeople : 3))
     }
     

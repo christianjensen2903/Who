@@ -17,11 +17,19 @@ class DropDownView: UIView, UITableViewDelegate, UITableViewDataSource  {
     
     var delegate : dropDownProtocol!
     
+    let startColor = Colors.orange
+    let endColor = Colors.red
+    
+    var gradient = GradientTableView()
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        tableView.backgroundColor = UIColor.darkGray
-        self.backgroundColor = UIColor.darkGray
+        tableView.layer.backgroundColor = endColor.cgColor
+        
+        tableView.layer.cornerRadius = 10
+        tableView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
         
         tableView.delegate = self
@@ -47,14 +55,19 @@ class DropDownView: UIView, UITableViewDelegate, UITableViewDataSource  {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        gradient.setNumberOfRows(rows: dropDownOptions.count)
         return dropDownOptions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
+        cell.heightAnchor.constraint(equalToConstant: 55).isActive = true
         cell.textLabel?.text = dropDownOptions[indexPath.row]
-        cell.backgroundColor = UIColor.darkGray
+        cell.textLabel?.textAlignment = .center
+        cell.textLabel?.textColor = UIColor.white
+        cell.textLabel?.font = UIFont(name: "Georgia", size: 20)
+        cell.backgroundColor = gradient.findBackgroundColor(row: indexPath.row, startColor: startColor, endColor: endColor)
         return cell
     }
     
