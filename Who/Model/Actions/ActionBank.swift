@@ -12,6 +12,8 @@ class ActionBank {
     
     var list = [ActionModel]()
     
+    var extraCategories = ["Strip👀 ", "Sexual🍆", "Flirty💋","Deadly drunk☠️"]
+    
     init() {
         
         // Standard

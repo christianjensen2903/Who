@@ -25,7 +25,7 @@ class DropDownButton: UIButton, dropDownProtocol {
         super.init(frame: frame)
         
         self.backgroundColor = UIColor.darkGray
-        setupButton()
+        setup()
         
         dropView = DropDownView.init(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0))
         dropView.delegate = self
@@ -103,7 +103,7 @@ class DropDownButton: UIButton, dropDownProtocol {
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     }
     
-    private func setupButton() {
+    private func setup() {
         setTitleColor(UIColor.white, for: .normal)
         backgroundColor = Colors.yellow
         titleLabel?.font = UIFont(name: "Georgia", size: 20)

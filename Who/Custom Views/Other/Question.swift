@@ -1,5 +1,5 @@
 //
-//  QuestionContainer.swift
+//  QuestionLabel.swift
 //  Who
 //
 //  Created by Christian Jensen on 31/08/2018.
@@ -9,25 +9,25 @@
 import Foundation
 import UIKit
 
-class NameButton: UIButton {
+class Question: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupButton()
+        setup()
     }
     
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupButton()
+        setup()
     }
     
     
-    private func setupButton() {
-        setTitleColor(Colors.midPink, for: .normal)
-        backgroundColor = UIColor.white
+    private func setup() {
+        setTitleColor(UIColor.white, for: .normal)
+        backgroundColor = Colors.grey
         titleLabel?.font = UIFont(name: "Georgia", size: 20)
-        titleLabel?.numberOfLines = 1
+        titleLabel?.textAlignment = .center
         titleLabel?.minimumScaleFactor = 0.5
         titleLabel?.adjustsFontSizeToFitWidth = true
         layer.cornerRadius = 10
@@ -35,10 +35,5 @@ class NameButton: UIButton {
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowRadius = 10.0
     }
-    
-    override var isHighlighted: Bool {
-        didSet {
-            backgroundColor = isHighlighted ? Colors.green : .white
-        }
-    }
 }
+

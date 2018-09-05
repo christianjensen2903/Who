@@ -1,33 +1,33 @@
 //
-//  QuestionLabel.swift
+//  CategoryButton.swift
 //  Who
 //
-//  Created by Christian Jensen on 31/08/2018.
+//  Created by Christian Jensen on 05/09/2018.
 //  Copyright © 2018 Christian Jensen. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class Question: UIButton {
+class CategoryButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupButton()
+        setup()
     }
     
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupButton()
+        setup()
     }
     
     
-    private func setupButton() {
+    private func setup() {
         setTitleColor(UIColor.white, for: .normal)
-        backgroundColor = Colors.grey
+        backgroundColor = UIColor.black
         titleLabel?.font = UIFont(name: "Georgia", size: 20)
-        titleLabel?.textAlignment = .center
+        titleLabel?.numberOfLines = 1
         titleLabel?.minimumScaleFactor = 0.5
         titleLabel?.adjustsFontSizeToFitWidth = true
         layer.cornerRadius = 10
@@ -36,4 +36,3 @@ class Question: UIButton {
         layer.shadowRadius = 10.0
     }
 }
-

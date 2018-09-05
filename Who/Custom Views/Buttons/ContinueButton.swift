@@ -19,16 +19,16 @@ class ContinueButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupButton()
+        setup()
     }
     
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupButton()
+        setup()
     }
     
-    private func setupButton() {
+    private func setup() {
         setTitleColor(Colors.midPink, for: .normal)
         titleLabel?.font = UIFont(name: "Georgia", size: 28)
         layer.cornerRadius = frame.size.height/2

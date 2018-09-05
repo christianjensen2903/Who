@@ -13,17 +13,17 @@ class AndTheWinnerIsText: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupButton()
+        setup()
     }
     
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupButton()
+        setup()
     }
     
     
-    private func setupButton() {
+    private func setup() {
         setTitleColor(UIColor.white, for: .normal)
         backgroundColor = Colors.grey
         titleLabel?.font = UIFont(name: "Georgia", size: 30)

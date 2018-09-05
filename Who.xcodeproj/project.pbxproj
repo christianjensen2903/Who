@@ -14,6 +14,8 @@
 		771109AC213D7BBB00BD4595 /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771109AB213D7BBB00BD4595 /* DropDownButton.swift */; };
 		771109AE213D7C1300BD4595 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771109AD213D7C1300BD4595 /* DropDownView.swift */; };
 		771109B0213D7EEB00BD4595 /* GradientTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771109AF213D7EEB00BD4595 /* GradientTableView.swift */; };
+		773E21B7214020E600B658D1 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E21B6214020E600B658D1 /* ButtonCell.swift */; };
+		773E21BF2140258500B658D1 /* CategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E21BE2140258500B658D1 /* CategoryButton.swift */; };
 		779871832139F1C00029A6C3 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779871822139F1C00029A6C3 /* SettingsVC.swift */; };
 		77987185213A98050029A6C3 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77987184213A98050029A6C3 /* QuestionModel.swift */; };
 		77987187213A99030029A6C3 /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77987186213A99030029A6C3 /* QuestionBank.swift */; };
@@ -31,6 +33,7 @@
 		77C714CA2138734A0040506F /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C714C92138734A0040506F /* UIView + Extension.swift */; };
 		77C714CC213875390040506F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C714CB213875390040506F /* Constants.swift */; };
 		77C714CF21387CF30040506F /* StartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C714CE21387CF30040506F /* StartButton.swift */; };
+		77FA8C5721406C7A005787BA /* ButtonTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FA8C5621406C7A005787BA /* ButtonTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,8 @@
 		771109AB213D7BBB00BD4595 /* DropDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButton.swift; sourceTree = "<group>"; };
 		771109AD213D7C1300BD4595 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
 		771109AF213D7EEB00BD4595 /* GradientTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientTableView.swift; sourceTree = "<group>"; };
+		773E21B6214020E600B658D1 /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
+		773E21BE2140258500B658D1 /* CategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButton.swift; sourceTree = "<group>"; };
 		779871822139F1C00029A6C3 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		77987184213A98050029A6C3 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		77987186213A99030029A6C3 /* QuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
@@ -60,6 +65,7 @@
 		77C714C92138734A0040506F /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		77C714CB213875390040506F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		77C714CE21387CF30040506F /* StartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButton.swift; sourceTree = "<group>"; };
+		77FA8C5621406C7A005787BA /* ButtonTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		773E21B8214020F100B658D1 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				77C714CE21387CF30040506F /* StartButton.swift */,
+				770EA8E7213980AD00CFE2A6 /* ContinueButton.swift */,
+				770EA8ED2139AADF00CFE2A6 /* NameButton.swift */,
+				771109AB213D7BBB00BD4595 /* DropDownButton.swift */,
+				773E21BE2140258500B658D1 /* CategoryButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		773E21B92140211B00B658D1 /* Table Views */ = {
+			isa = PBXGroup;
+			children = (
+				771109AF213D7EEB00BD4595 /* GradientTableView.swift */,
+				771109AD213D7C1300BD4595 /* DropDownView.swift */,
+				77FA8C5621406C7A005787BA /* ButtonTableView.swift */,
+			);
+			path = "Table Views";
+			sourceTree = "<group>";
+		};
+		773E21BA2140213B00B658D1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				773E21B6214020E600B658D1 /* ButtonCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		773E21BB2140214F00B658D1 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				77C714C92138734A0040506F /* UIView + Extension.swift */,
+				770EA8E92139A09300CFE2A6 /* Question.swift */,
+				7798718A213C30FD0029A6C3 /* AndTheWinnerIsText.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		773E21BC2140217B00B658D1 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				7798718C213C5A640029A6C3 /* ActionModel.swift */,
+				7798718E213C5A710029A6C3 /* ActionBank.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		773E21BD2140218300B658D1 /* Questions */ = {
+			isa = PBXGroup;
+			children = (
+				77987184213A98050029A6C3 /* QuestionModel.swift */,
+				77987186213A99030029A6C3 /* QuestionBank.swift */,
+			);
+			path = Questions;
+			sourceTree = "<group>";
+		};
 		77C7149E21381EE10040506F = {
 			isa = PBXGroup;
 			children = (
@@ -108,11 +172,9 @@
 		77C714BC21381F170040506F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				773E21BD2140218300B658D1 /* Questions */,
+				773E21BC2140217B00B658D1 /* Actions */,
 				77C714CB213875390040506F /* Constants.swift */,
-				77987184213A98050029A6C3 /* QuestionModel.swift */,
-				77987186213A99030029A6C3 /* QuestionBank.swift */,
-				7798718C213C5A640029A6C3 /* ActionModel.swift */,
-				7798718E213C5A710029A6C3 /* ActionBank.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -120,15 +182,10 @@
 		77C714BD21381F250040506F /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				77C714C92138734A0040506F /* UIView + Extension.swift */,
-				77C714CE21387CF30040506F /* StartButton.swift */,
-				770EA8E7213980AD00CFE2A6 /* ContinueButton.swift */,
-				770EA8E92139A09300CFE2A6 /* Question.swift */,
-				770EA8ED2139AADF00CFE2A6 /* NameButton.swift */,
-				7798718A213C30FD0029A6C3 /* AndTheWinnerIsText.swift */,
-				771109AB213D7BBB00BD4595 /* DropDownButton.swift */,
-				771109AD213D7C1300BD4595 /* DropDownView.swift */,
-				771109AF213D7EEB00BD4595 /* GradientTableView.swift */,
+				773E21BA2140213B00B658D1 /* Cells */,
+				773E21B92140211B00B658D1 /* Table Views */,
+				773E21B8214020F100B658D1 /* Buttons */,
+				773E21BB2140214F00B658D1 /* Other */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -237,11 +294,13 @@
 				770EA8E8213980AD00CFE2A6 /* ContinueButton.swift in Sources */,
 				77C714AD21381EE10040506F /* ViewController.swift in Sources */,
 				77987185213A98050029A6C3 /* QuestionModel.swift in Sources */,
+				773E21B7214020E600B658D1 /* ButtonCell.swift in Sources */,
 				770EA8EE2139AADF00CFE2A6 /* NameButton.swift in Sources */,
 				770EA8EA2139A09300CFE2A6 /* Question.swift in Sources */,
 				771109AE213D7C1300BD4595 /* DropDownView.swift in Sources */,
 				7798718F213C5A710029A6C3 /* ActionBank.swift in Sources */,
 				771109B0213D7EEB00BD4595 /* GradientTableView.swift in Sources */,
+				77FA8C5721406C7A005787BA /* ButtonTableView.swift in Sources */,
 				7798718D213C5A640029A6C3 /* ActionModel.swift in Sources */,
 				77987187213A99030029A6C3 /* QuestionBank.swift in Sources */,
 				77C714AB21381EE10040506F /* AppDelegate.swift in Sources */,
@@ -251,6 +310,7 @@
 				77C714CF21387CF30040506F /* StartButton.swift in Sources */,
 				77C714CC213875390040506F /* Constants.swift in Sources */,
 				77987189213C304A0029A6C3 /* WinnerVC.swift in Sources */,
+				773E21BF2140258500B658D1 /* CategoryButton.swift in Sources */,
 				779871832139F1C00029A6C3 /* SettingsVC.swift in Sources */,
 				7798718B213C30FD0029A6C3 /* AndTheWinnerIsText.swift in Sources */,
 			);

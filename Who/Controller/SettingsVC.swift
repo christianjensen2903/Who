@@ -11,12 +11,22 @@ import UIKit
 class SettingsVC: UIViewController {
 
     var button = DropDownButton()
+    
+    let startColor = Colors.green
+    let endColor = Colors.darkGreen
+    
+    var gradient = GradientTableView()
+    
+    let categories = ActionBank()
 
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setLayout()
+        tableView.dataSource = self
+        tableView.delegate = self
         
     }
     
@@ -47,13 +57,55 @@ class SettingsVC: UIViewController {
         button.dropView.dropDownOptions = ["A little 🥂", "Drunk 🍷", "Very drunk 🍻"]
     }
     
+    
 }
 
 protocol dropDownProtocol {
     func dropDownPressed(string : String)
 }
 
+extension SettingsVC: ButtonCellDelegate {
+    
+    func didTapButton(title: String) {
+        
+    }
+}
 
+extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        gradient.setNumberOfRows(rows: categories.extraCategories.count)
+        return categories.extraCategories.count
+    }
+
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ButtonCell") as! ButtonCell
+        
+        tableView.separatorStyle = .none
+        cell.categoryButton.backgroundColor = gradient.findBackgroundColor(row: indexPath.row, startColor: startColor, endColor: endColor)
+        cell.selectionStyle = .none
+        cell.categoryButton.setTitle(categories.extraCategories[indexPath.row], for: .normal)
+        cell.delegate = self
+        
+
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 75
+    }
+}
 
 
 

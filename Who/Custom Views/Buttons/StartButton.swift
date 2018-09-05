@@ -13,17 +13,17 @@ class StartButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupButton()
+        setup()
     }
     
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupButton()
+        setup()
     }
     
     
-    private func setupButton() {
+    private func setup() {
         setTitleColor(Colors.green, for: .normal)
         backgroundColor = .clear
         titleLabel?.font = UIFont(name: "Georgia", size: 28)
