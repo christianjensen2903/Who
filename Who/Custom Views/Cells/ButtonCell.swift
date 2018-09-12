@@ -11,18 +11,21 @@ import UIKit
 
 protocol ButtonCellDelegate {
     
-    func didTapButton(title: String)
+    func didTapButton(title: String, tag: Int)
 }
 
 
 class ButtonCell: UITableViewCell {
     
+    
     var delegate: ButtonCellDelegate?
     
+    
     @IBOutlet weak var categoryButton: CategoryButton!
+    @IBOutlet weak var isSelectedImage: UIImageView!
     
     @IBAction func categoryButtonTapped(_ sender: CategoryButton) {
-        delegate?.didTapButton(title: (categoryButton.titleLabel?.text)!)
+        delegate?.didTapButton(title: (categoryButton.titleLabel?.text)!, tag: sender.tag)
     }
     
     
@@ -34,13 +37,14 @@ class ButtonCell: UITableViewCell {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
         setup()
     }
     
     
     private func setup() {
         
-        
         backgroundColor = .clear
     }
 }
+

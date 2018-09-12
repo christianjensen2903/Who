@@ -13,11 +13,13 @@ class QuestionModel {
     var questionText : String
     var questionCategory : String
     var peopleNumber : Int
+    var actionText : String
     
-    init(text: String, category: String, numberOfPeople: Int) {
+    init(text: String, category: String, numberOfPeople: Int, action: String) {
         
         questionText = text
         questionCategory = category
         peopleNumber = numberOfPeople
+        actionText = action
     }
 }

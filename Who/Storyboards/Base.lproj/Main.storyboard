@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -77,10 +78,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="qBb-3c-a0f"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="89" y="18"/>
+            <point key="canvasLocation" x="1028" y="17.541229385307346"/>
         </scene>
         <!--SettingsVC-->
         <scene sceneID="dTA-1y-50h">
@@ -108,6 +110,9 @@
                                 <state key="normal" title="Continue &gt;">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="continueButtonPressed:" destination="ud8-c0-0PF" eventType="touchUpInside" id="AJA-CK-zVx"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IX8-Ge-4Uh" customClass="ButtonTableView" customModule="Who" customModuleProvider="target">
                                 <rect key="frame" x="60" y="216" width="255" height="386"/>
@@ -127,20 +132,40 @@
                                                         <action selector="categoryButtonTapped:" destination="Qz6-UC-73P" eventType="touchUpInside" id="LKj-xe-vpd"/>
                                                     </connections>
                                                 </button>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="1LU-fi-TSC">
+                                                    <rect key="frame" x="220" y="89" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="7sd-Q0-eRp"/>
+                                                        <constraint firstAttribute="width" constant="20" id="LrO-IS-kIj"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="XJL-GX-icp" secondAttribute="bottom" constant="10" id="IXo-1h-iNL"/>
+                                                <constraint firstItem="1LU-fi-TSC" firstAttribute="trailing" secondItem="Q6g-ow-GtV" secondAttribute="trailingMargin" id="J74-0d-zqJ"/>
                                                 <constraint firstItem="XJL-GX-icp" firstAttribute="top" secondItem="Q6g-ow-GtV" secondAttribute="top" constant="10" id="MjS-ic-xyx"/>
+                                                <constraint firstItem="1LU-fi-TSC" firstAttribute="centerY" secondItem="Q6g-ow-GtV" secondAttribute="centerY" id="PqQ-zT-twn"/>
                                                 <constraint firstAttribute="trailing" secondItem="XJL-GX-icp" secondAttribute="trailing" id="lgl-Ct-hI7"/>
                                                 <constraint firstItem="XJL-GX-icp" firstAttribute="leading" secondItem="Q6g-ow-GtV" secondAttribute="leading" id="qrR-nb-tlh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="categoryButton" destination="XJL-GX-icp" id="7oc-vy-51T"/>
+                                            <outlet property="isSelectedImage" destination="1LU-fi-TSC" id="vIi-Zx-lbA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmn-P7-NEN">
+                                <rect key="frame" x="15" y="20" width="62" height="35"/>
+                                <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="20"/>
+                                <state key="normal" title="&lt; Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="ud8-c0-0PF" eventType="touchUpInside" id="GE2-nK-yOD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.82745098039215681" green="0.62745098039215685" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -150,20 +175,38 @@
                             <constraint firstItem="Svo-rR-Mc1" firstAttribute="top" secondItem="NbY-tu-sZj" secondAttribute="bottom" constant="90" id="F0F-Vl-h19"/>
                             <constraint firstItem="NbY-tu-sZj" firstAttribute="leading" secondItem="SDS-9y-QHa" secondAttribute="leading" constant="60" id="H2X-i6-jbo"/>
                             <constraint firstItem="Se9-Jo-pGf" firstAttribute="top" secondItem="IX8-Ge-4Uh" secondAttribute="bottom" constant="20" id="SOy-Do-WJP"/>
+                            <constraint firstItem="hmn-P7-NEN" firstAttribute="leading" secondItem="SDS-9y-QHa" secondAttribute="leading" constant="15" id="TRp-tW-ZAY"/>
                             <constraint firstItem="IX8-Ge-4Uh" firstAttribute="leading" secondItem="SDS-9y-QHa" secondAttribute="leading" constant="60" id="gTB-xe-x1I"/>
                             <constraint firstItem="IX8-Ge-4Uh" firstAttribute="top" secondItem="Svo-rR-Mc1" secondAttribute="bottom" constant="10" id="tca-1G-7sJ"/>
                             <constraint firstItem="SDS-9y-QHa" firstAttribute="trailing" secondItem="IX8-Ge-4Uh" secondAttribute="trailing" constant="60" id="tjx-I0-TxS"/>
                             <constraint firstItem="NbY-tu-sZj" firstAttribute="top" secondItem="SDS-9y-QHa" secondAttribute="top" constant="50" id="wkV-3T-l68"/>
+                            <constraint firstItem="hmn-P7-NEN" firstAttribute="top" secondItem="SDS-9y-QHa" secondAttribute="top" id="zR3-57-rRi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SDS-9y-QHa"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="IX8-Ge-4Uh" id="cpG-En-vzs"/>
+                        <segue destination="YoU-7J-m7r" kind="show" identifier="playersSegue" id="rcg-ZN-klJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hXI-VH-INQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="805.60000000000002" y="519.49025487256381"/>
+            <point key="canvasLocation" x="1744.8" y="519.49025487256381"/>
+        </scene>
+        <!--PlayersVC-->
+        <scene sceneID="vPQ-4c-8v8">
+            <objects>
+                <viewController id="YoU-7J-m7r" customClass="PlayersVC" customModule="Who" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CIi-Mp-ew3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Oic-Y1-8NX"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tZ6-Zt-5ze" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2478" y="523"/>
         </scene>
         <!--QuestionVC-->
         <scene sceneID="NVO-tf-hWV">
@@ -249,7 +292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ook-LE-TkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="805.60000000000002" y="-208.24587706146929"/>
+            <point key="canvasLocation" x="1744.8" y="-208.24587706146929"/>
         </scene>
         <!--WinnerVC-->
         <scene sceneID="jMg-h0-MLB">
@@ -267,7 +310,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="And the winner is..!"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="winner" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SG2-ju-NSV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="winner" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SG2-ju-NSV">
                                 <rect key="frame" x="60" y="375" width="255" height="68.5"/>
                                 <fontDescription key="fontDescription" name="Georgia-BoldItalic" family="Georgia" pointSize="60"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -280,7 +323,7 @@
                                     <constraint firstAttribute="height" constant="3" id="gPR-DN-ICe"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do this" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKA-A0-EqK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do this" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKA-A0-EqK">
                                 <rect key="frame" x="60" y="584" width="255" height="23"/>
                                 <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -333,13 +376,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wIp-15-2cz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1567.2" y="-213.64317841079463"/>
+            <point key="canvasLocation" x="2506.4000000000001" y="-213.64317841079463"/>
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark" width="760" height="734"/>
         <image name="trophy" width="85" height="85"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SzB-o2-Sps"/>
+        <segue reference="E1H-oo-hEm"/>
     </inferredMetricsTieBreakers>
 </document>

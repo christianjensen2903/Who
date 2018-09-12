@@ -14,6 +14,7 @@ class WinnerVC: UIViewController {
     @IBOutlet weak var actionLabel: UILabel!
     
     var winnerName = ""
+    var questionAction = ""
     
     let allActions = ActionBank()
     var actions = [ActionModel]()
@@ -26,7 +27,7 @@ class WinnerVC: UIViewController {
         
         filterQuestions()
         
-        actionLabel.text = actions[randomNumber].actionText
+        actionLabel.text = questionAction + actions[randomNumber].actionText
     }
 
     override func didReceiveMemoryWarning() {

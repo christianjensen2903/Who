@@ -199,6 +199,7 @@ class QuestionVC: UIViewController {
         if segue.identifier == "winnerSegue" {
             if let destinationVC = segue.destination as? WinnerVC {
                 destinationVC.winnerName = winner
+                destinationVC.questionAction = questions[questionNumber].actionText
             }
         }
     }

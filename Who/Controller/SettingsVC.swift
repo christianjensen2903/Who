@@ -17,7 +17,8 @@ class SettingsVC: UIViewController {
     
     var gradient = GradientTableView()
     
-    let categories = ActionBank()
+    var categories = CategoryBank()
+    var selectedCategories = [CategoryModel]()
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -37,6 +38,7 @@ class SettingsVC: UIViewController {
     
     func setLayout() {
         view.setGradientBackground(colorOne: Colors.dustyPink, colorTwo: Colors.pink)
+
         
         //Configure the button
         button = DropDownButton.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
@@ -57,8 +59,50 @@ class SettingsVC: UIViewController {
         button.dropView.dropDownOptions = ["A little 🥂", "Drunk 🍷", "Very drunk 🍻"]
     }
     
+    @IBAction func backButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func continueButtonPressed(_ sender: Any) {
+        findSelectedCategories()
+        checkForEnoughCategories()
+    }
+    
+    func findSelectedCategories() {
+        selectedCategories = categories.list.filter { return $0.selection == true }
+    }
+    
+    func checkForEnoughCategories() {
+        
+        if selectedCategories.count == 0 {
+            
+            // Show alert that there isn't selected enough categories
+            let alert = UIAlertController(title: "Not enough categories", message: "You must select at least one category to continue", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+        } else {
+            performSegue(withIdentifier: "playersSegue", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "playersSegue" {
+            if let destinationVC = segue.destination as? PlayersVC {
+                destinationVC.categories = selectedCategories
+            }
+        }
+    }
+    
     
 }
+
+
+
+
+
+
 
 protocol dropDownProtocol {
     func dropDownPressed(string : String)
@@ -66,7 +110,7 @@ protocol dropDownProtocol {
 
 extension SettingsVC: ButtonCellDelegate {
     
-    func didTapButton(title: String) {
+    func didTapButton(title: String, tag: Int) {
         
     }
 }
@@ -79,8 +123,8 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
 
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        gradient.setNumberOfRows(rows: categories.extraCategories.count)
-        return categories.extraCategories.count
+        gradient.setNumberOfRows(rows: categories.list.count)
+        return categories.list.count
     }
 
 
@@ -91,15 +135,32 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
         tableView.separatorStyle = .none
         cell.categoryButton.backgroundColor = gradient.findBackgroundColor(row: indexPath.row, startColor: startColor, endColor: endColor)
         cell.selectionStyle = .none
-        cell.categoryButton.setTitle(categories.extraCategories[indexPath.row], for: .normal)
+        cell.categoryButton.setTitle(categories.list[indexPath.row].categoryName, for: .normal)
+        cell.categoryButton.tag = indexPath.row
+        cell.categoryButton.addTarget(self, action: #selector(buttonTapped(sender:)), for: .touchUpInside)
         cell.delegate = self
         
-
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    @objc func buttonTapped ( sender: UIButton) {
         
+        let indexPath = IndexPath(row: sender.tag, section: 0)
+        let cell = tableView.cellForRow(at: indexPath) as! ButtonCell
+        
+        var currentSelection = categories.list[sender.tag].selection
+        
+        if currentSelection == false {
+            currentSelection = true
+            cell.isSelectedImage.isHidden = false
+        } else {
+            currentSelection = false
+            cell.isSelectedImage.isHidden = true
+        }
+        categories.list[sender.tag].selection = currentSelection
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
