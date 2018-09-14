@@ -28,6 +28,8 @@ class DropDownView: UIView, UITableViewDelegate, UITableViewDataSource  {
         
         tableView.layer.backgroundColor = endColor.cgColor
         
+        tableView.separatorStyle = .none
+        
         tableView.layer.cornerRadius = 10
         tableView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         

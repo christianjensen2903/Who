@@ -12,7 +12,7 @@ class ActionBank {
     
     var list = [ActionModel]()
     
-    var categories = ["Tipsy🍹", "Flirty💋", "Strip👀 ", "Sexual🍆","Deadly drunk☠️"]
+    //var categories = ["Tipsy🍹", "Flirty💋", "Strip👀 ", "Sexual🍆","Deadly drunk☠️"]
     
     init() {
         

@@ -79,18 +79,31 @@ class SettingsVC: UIViewController {
             // Show alert that there isn't selected enough categories
             let alert = UIAlertController(title: "Not enough categories", message: "You must select at least one category to continue", preferredStyle: .alert)
             
-            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Ok, i'll", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+        } else if button.titleLabel?.text == "How drunk? 🍺" {
+            
+            // Show alert that there isn't selected how drunk
+            let alert = UIAlertController(title: "Need to choose how drunk", message: "You must select how drunk you want to be", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok, i'll", style: .cancel, handler: nil))
             
             self.present(alert, animated: true)
         } else {
             performSegue(withIdentifier: "playersSegue", sender: self)
         }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "playersSegue" {
             if let destinationVC = segue.destination as? PlayersVC {
                 destinationVC.categories = selectedCategories
+                if let howDrunkString = button.titleLabel?.text {
+                    destinationVC.howDrunk = howDrunkString
+                }
+                
             }
         }
     }
@@ -109,9 +122,9 @@ protocol dropDownProtocol {
 }
 
 extension SettingsVC: ButtonCellDelegate {
-    
+
     func didTapButton(title: String, tag: Int) {
-        
+
     }
 }
 

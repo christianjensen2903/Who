@@ -20,6 +20,9 @@ class QuestionVC: UIViewController {
     lazy var numberOfPlayers = playersArray.count
     var currentPlayer = 1
     
+    var categories = [CategoryModel]()
+    var howDrunk = ""
+    
     let allQuestions = QuestionBank()
     var questions = [QuestionModel]()
     lazy var questionNumber = Int(arc4random_uniform(UInt32(questions.count)))

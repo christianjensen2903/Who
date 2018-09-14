@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol ButtonCellDelegate {
-    
+
     func didTapButton(title: String, tag: Int)
 }
 
@@ -23,6 +23,8 @@ class ButtonCell: UITableViewCell {
     
     @IBOutlet weak var categoryButton: CategoryButton!
     @IBOutlet weak var isSelectedImage: UIImageView!
+    @IBOutlet weak var plusImage: UIImageView!
+    
     
     @IBAction func categoryButtonTapped(_ sender: CategoryButton) {
         delegate?.didTapButton(title: (categoryButton.titleLabel?.text)!, tag: sender.tag)

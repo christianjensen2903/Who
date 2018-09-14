@@ -12,7 +12,7 @@ class CategoryBank {
     
     var list = [CategoryModel]()
     
-    var categories = ["Tipsy🍹", "Flirty💋", "Strip👀 ", "Sexual🍆","Deadly drunk☠️"]
+    var categories = ["Tipsy🍹", "Flirty💋", "Strip👀", "Sexual🍆","Deadly drunk☠️"]
     
     init() {
         
