@@ -16,7 +16,7 @@ class QuestionVC: UIViewController {
     @IBOutlet weak var middleNameButton: NameButton!
     @IBOutlet weak var buttomNameButton: NameButton!
     
-    var playersArray = ["Christian", "Mikkel", "Søren", "Peter", "Mette", "Lotte"]
+    var playersArray = [String]()
     lazy var numberOfPlayers = playersArray.count
     var currentPlayer = 1
     
@@ -25,7 +25,7 @@ class QuestionVC: UIViewController {
     
     let allQuestions = QuestionBank()
     var questions = [QuestionModel]()
-    lazy var questionNumber = Int(arc4random_uniform(UInt32(questions.count)))
+    var questionNumber = 0
     
     var option1 = 0
     var option2 = 0
@@ -40,16 +40,7 @@ class QuestionVC: UIViewController {
         
         filterQuestions()
         setLayout()
-        
-        
-        
-        // Load players
-//        if let players = UserDefaults.standard.array(forKey: "playersArray") as? [String] {
-//            playersArray = players
-//        }
-
     }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -80,12 +71,19 @@ class QuestionVC: UIViewController {
 
     // Select questions selected and suited for the game
     func filterQuestions() {
-        
-        if numberOfPlayers == 3 {
-            questions = allQuestions.list.filter { return $0.peopleNumber <= 2}
-        } else {
-            questions = allQuestions.list
+
+        for category in categories {
+            var tempQuestions = [QuestionModel]()
+            tempQuestions = allQuestions.list.filter { return $0.questionCategory == category.categoryName}
+            
+            for question in tempQuestions {
+                questions.append(question)
+            }
         }
+        
+        questions = questions.filter { return $0.peopleNumber <= numberOfPlayers - 1}
+        
+        questionNumber = Int(arc4random_uniform(UInt32(questions.count)))
     }
     
     // Select the players for the buttons and assign them to the buttons
@@ -103,6 +101,11 @@ class QuestionVC: UIViewController {
             
             // Go through for the number of players needed
             var buttonNames = [String]()
+            
+            var firstNamesSorted = [String]()
+            var secondNamesSorted = [String]()
+            var thirdNamesSorted = [String]()
+            
             for j in 1...playersNeeded {
                 
                 
@@ -130,10 +133,6 @@ class QuestionVC: UIViewController {
 
             namesUsed.append(buttonNames)
             
-            var firstNamesSorted = [String]()
-            var secondNamesSorted = [String]()
-            var thirdNamesSorted = [String]()
-            
             // Set button tittle
             if i == 1 {
                 topNameButton.setTitle(buttonString, for: .normal)
@@ -149,7 +148,10 @@ class QuestionVC: UIViewController {
                 }
                 
             } else if i == 3 {
+                firstNamesSorted = namesUsed[0].sorted()
+                secondNamesSorted = namesUsed[1].sorted()
                 thirdNamesSorted = namesUsed[2].sorted()
+                
                 if thirdNamesSorted != firstNamesSorted && thirdNamesSorted != secondNamesSorted {
                     buttomNameButton.setTitle(buttonString, for: .normal)
                     i += 1
@@ -194,7 +196,6 @@ class QuestionVC: UIViewController {
         } else {
             winner = buttomNameButton.titleLabel?.text ?? somethingWentWrong
         }
-        
         performSegue(withIdentifier: "winnerSegue", sender: self)
     }
     
@@ -203,15 +204,10 @@ class QuestionVC: UIViewController {
             if let destinationVC = segue.destination as? WinnerVC {
                 destinationVC.winnerName = winner
                 destinationVC.questionAction = questions[questionNumber].actionText
+                destinationVC.playersArray = playersArray
+                destinationVC.howDrunk = howDrunk
+                destinationVC.categories = categories
             }
         }
-    }
-    
-    func refreshView() {
-        
-        // Calling the viewDidLoad and viewWillAppear methods to "refresh" the VC and run through the code within the methods themselves
-        self.viewDidLoad()
-        //self.viewWillAppear(true)
-        
     }
 }

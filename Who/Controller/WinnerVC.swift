@@ -16,6 +16,10 @@ class WinnerVC: UIViewController {
     var winnerName = ""
     var questionAction = ""
     
+    var playersArray = [String]()
+    var categories = [CategoryModel]()
+    var howDrunk = ""
+    
     let allActions = ActionBank()
     var actions = [ActionModel]()
     lazy var randomNumber = Int(arc4random_uniform(UInt32(actions.count)))
@@ -42,8 +46,21 @@ class WinnerVC: UIViewController {
     // Select questions selected for the game
     func filterQuestions() {
         
-        actions = allActions.list
-        //questions = allQuestions.list.filter { return $0.peopleNumber <= 2}
+        actions = allActions.list.filter { return $0.actionCategory == howDrunk}
+    }
+    
+    @IBAction func continueButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "questionSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "questionSegue" {
+            if let destinationVC = segue.destination as? QuestionVC {
+                destinationVC.playersArray = playersArray
+                destinationVC.howDrunk = howDrunk
+                destinationVC.categories = categories
+            }
+        }
     }
     
     

@@ -34,7 +34,9 @@ class ContinueButton: UIButton {
         layer.cornerRadius = frame.size.height/2
         layer.borderWidth = 0
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowRadius = 10.0
+        layer.shadowOffset = CGSize(width: 3, height: 6)
+        layer.shadowRadius = 5
+        layer.shadowOpacity = 0.30
         gradientLayer.startPoint = CGPoint(x: 1.0, y: 0.5)
         gradientLayer.endPoint = CGPoint(x: 0.0, y: 0.5)
         gradientLayer.frame = bounds

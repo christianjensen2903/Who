@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1537DE1E63B5851B79DEC957 /* Pods_Who.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DF619D975481074A6548A8 /* Pods_Who.framework */; };
 		770EA8E8213980AD00CFE2A6 /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770EA8E7213980AD00CFE2A6 /* ContinueButton.swift */; };
 		770EA8EA2139A09300CFE2A6 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770EA8E92139A09300CFE2A6 /* Question.swift */; };
 		770EA8EC2139A81400CFE2A6 /* QuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770EA8EB2139A81400CFE2A6 /* QuestionVC.swift */; };
@@ -40,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D4A8C158599FEC5136C3F00 /* Pods-Who.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Who.release.xcconfig"; path = "Pods/Target Support Files/Pods-Who/Pods-Who.release.xcconfig"; sourceTree = "<group>"; };
+		72DF619D975481074A6548A8 /* Pods_Who.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Who.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		770EA8E7213980AD00CFE2A6 /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
 		770EA8E92139A09300CFE2A6 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		770EA8EB2139A81400CFE2A6 /* QuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionVC.swift; sourceTree = "<group>"; };
@@ -72,6 +75,7 @@
 		77C714CE21387CF30040506F /* StartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButton.swift; sourceTree = "<group>"; };
 		77F1068721499EAF007A2C0F /* PlayersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersVC.swift; sourceTree = "<group>"; };
 		77FA8C5621406C7A005787BA /* ButtonTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableView.swift; sourceTree = "<group>"; };
+		82ACE65DE55DE2ED0B9AD4F1 /* Pods-Who.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Who.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Who/Pods-Who.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,12 +83,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1537DE1E63B5851B79DEC957 /* Pods_Who.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6FF07EFCC4B5E7819FC8D03B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				82ACE65DE55DE2ED0B9AD4F1 /* Pods-Who.debug.xcconfig */,
+				4D4A8C158599FEC5136C3F00 /* Pods-Who.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		773E21B8214020F100B658D1 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +172,8 @@
 				77C714C5213820D10040506F /* Default-568h@2x.png */,
 				77C714A921381EE10040506F /* Who */,
 				77C714A821381EE10040506F /* Products */,
+				6FF07EFCC4B5E7819FC8D03B /* Pods */,
+				C25DD2E12B7749C56A2D3E3C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,6 +251,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		C25DD2E12B7749C56A2D3E3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72DF619D975481074A6548A8 /* Pods_Who.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -242,6 +266,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 77C714B921381EE80040506F /* Build configuration list for PBXNativeTarget "Who" */;
 			buildPhases = (
+				3F9A3BD4EF86FD43CE79AE02 /* [CP] Check Pods Manifest.lock */,
 				77C714A321381EE10040506F /* Sources */,
 				77C714A421381EE10040506F /* Frameworks */,
 				77C714A521381EE10040506F /* Resources */,
@@ -302,6 +327,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3F9A3BD4EF86FD43CE79AE02 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Who-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		77C714A321381EE10040506F /* Sources */ = {
@@ -474,6 +524,7 @@
 		};
 		77C714BA21381EE80040506F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82ACE65DE55DE2ED0B9AD4F1 /* Pods-Who.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -492,6 +543,7 @@
 		};
 		77C714BB21381EE80040506F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D4A8C158599FEC5136C3F00 /* Pods-Who.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

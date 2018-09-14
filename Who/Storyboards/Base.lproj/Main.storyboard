@@ -427,7 +427,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="0mI-N6-hS8" kind="show" id="SzB-o2-Sps"/>
+                                    <action selector="continueButtonTapped:" destination="Jo1-wb-g7u" eventType="touchUpInside" id="OWz-qY-cMV"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trophy" translatesAutoresizingMaskIntoConstraints="NO" id="guD-y0-rsU">
@@ -463,6 +463,7 @@
                     <connections>
                         <outlet property="actionLabel" destination="ZKA-A0-EqK" id="8IJ-to-5hS"/>
                         <outlet property="winnerLabel" destination="SG2-ju-NSV" id="9av-yO-BYg"/>
+                        <segue destination="0mI-N6-hS8" kind="show" identifier="questionSegue" id="Dsr-RX-QmS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wIp-15-2cz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -476,6 +477,6 @@
         <image name="trophy" width="85" height="85"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="epp-lg-C6X"/>
+        <segue reference="Dsr-RX-QmS"/>
     </inferredMetricsTieBreakers>
 </document>

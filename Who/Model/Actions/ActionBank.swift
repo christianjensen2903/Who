@@ -12,14 +12,16 @@ class ActionBank {
     
     var list = [ActionModel]()
     
-    //var categories = ["Tipsy🍹", "Flirty💋", "Strip👀 ", "Sexual🍆","Deadly drunk☠️"]
-    
     init() {
         
-        // Standard
-        list.append(ActionModel(text: "take 2 sips", category: "Standard"))
-        list.append(ActionModel(text: "take 1 sip", category: "Standard"))
-        list.append(ActionModel(text: "give 2 sips away", category: "Standard"))
-        list.append(ActionModel(text: "give 1 sip away", category: "Standard"))
+        // A little 🥂
+        list.append(ActionModel(text: "take 1 sip", category: "A little 🥂"))
+        
+        // Drunk 🍷
+        list.append(ActionModel(text: "take 2 sips", category: "Drunk 🍷"))
+        
+        // Very drunk 🍻
+        list.append(ActionModel(text: "take 3 sips", category: "Very drunk 🍻"))
+        
     }
 }

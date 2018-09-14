@@ -33,6 +33,8 @@ class CategoryButton: UIButton {
         layer.cornerRadius = 10
         layer.borderWidth = 0.0
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowRadius = 10.0
+        layer.shadowOffset = CGSize(width: 3, height: 6)
+        layer.shadowRadius = 5
+        layer.shadowOpacity = 0.30
     }
 }
