@@ -39,6 +39,7 @@ class PlayersVC: UIViewController {
     }
     
     @IBAction func startGameButtonPressed(_ sender: Any) {
+        
         if players.count < 3 {
             let alert = UIAlertController(title: "Not enough players",
                                           message: "You need to be at least 3 players to start the game",
@@ -103,9 +104,11 @@ extension PlayersVC: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row < players.count {
             cell.categoryButton.setTitle(players[indexPath.row], for: .normal)
             cell.plusImage.image = UIImage(named: "arrow")
+            cell.categoryButton.isEnabled = false
         } else {
             cell.categoryButton.setTitle("Add new player", for: .normal)
             cell.plusImage.image = UIImage(named: "plusIcon")
+            cell.categoryButton.isEnabled = true
             cell.categoryButton.addTarget(self, action: #selector(buttonTapped(sender:)), for: .touchUpInside)
         }
 
@@ -130,8 +133,35 @@ extension PlayersVC: UITableViewDelegate, UITableViewDataSource {
                                                 return
                                         }
                                         
-                                        self.players.append(nameToSave)
-                                        self.tableView.reloadData()
+                                        if self.players.contains(nameToSave) {
+                                            
+                                            let alert = UIAlertController(title: "Player already exists",
+                                                                          message: "",
+                                                                          preferredStyle: .alert)
+                                            
+                                            let okAction = UIAlertAction(title: "Ok",
+                                                                           style: .default)
+                                            
+                                            alert.addAction(okAction)
+                                            
+                                            self.present(alert, animated: true)
+                                        } else if nameToSave == "" {
+                                            let alert = UIAlertController(title: "Player have to have a name",
+                                                                          message: "",
+                                                                          preferredStyle: .alert)
+                                            
+                                            let okAction = UIAlertAction(title: "Ok",
+                                                                         style: .default)
+
+                                            
+                                            alert.addAction(okAction)
+                                            
+                                            self.present(alert, animated: true)
+                                        
+                                        } else {
+                                            self.players.append(nameToSave)
+                                            self.tableView.reloadData()
+                                        }
         }
         
         let cancelAction = UIAlertAction(title: "Cancel",

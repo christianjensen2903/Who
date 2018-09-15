@@ -116,6 +116,6 @@ class DropDownButton: UIButton, dropDownProtocol {
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize(width: 3, height: 6)
         layer.shadowRadius = 5
-        layer.shadowOpacity = 0.30
+        layer.shadowOpacity = 0.16
     }
 }

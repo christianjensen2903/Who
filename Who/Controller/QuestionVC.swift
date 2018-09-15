@@ -65,7 +65,7 @@ class QuestionVC: UIViewController {
     // This method will update all the views on screen (progress bar, score label, etc)
     func updateUI() {
         
-        progressBar.frame.size.width = (view.frame.size.width / CGFloat(numberOfPlayers)) * CGFloat(currentPlayer)
+        progressBar.frame.size.width = (view.frame.size.width / CGFloat(numberOfPlayers)) * (CGFloat(currentPlayer)-1)
         
     }
 
@@ -178,7 +178,7 @@ class QuestionVC: UIViewController {
             option3 += 1
         }
         
-        if currentPlayer == numberOfPlayers {
+        if currentPlayer == numberOfPlayers + 1 {
             checkWhoWon()
         }
     }
