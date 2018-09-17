@@ -12,6 +12,7 @@ class WinnerVC: UIViewController {
     
     @IBOutlet weak var winnerLabel: UILabel!
     @IBOutlet weak var actionLabel: UILabel!
+    @IBOutlet weak var andTheWinnerIsText: AndTheWinnerIsText!
     
     var winnerName = ""
     var questionAction = ""
@@ -28,6 +29,7 @@ class WinnerVC: UIViewController {
         super.viewDidLoad()
         
         view.setGradientBackground(colorOne: Colors.dustyPink, colorTwo: Colors.pink)
+        andTheWinnerIsText.isEnabled = false
         
         filterQuestions()
         
