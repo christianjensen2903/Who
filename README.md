@@ -1,7 +1,7 @@
 <div align="center">
 
 
-  <img src=![Tegnebræt 1 kopi 2@3x](https://user-images.githubusercontent.com/15799390/196554931-1a286d36-7d29-42fe-880a-708eb700aad3.png) alt="logo" width="200" height="auto" />
+  <img src="Logo.png" alt="logo" width="200" height="auto" />
   <h1>Awesome Readme Template</h1>
   
   <p>
