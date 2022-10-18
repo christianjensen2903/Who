@@ -23,7 +23,7 @@
 
 <!-- About the Project -->
 ## :star2: About the Project
-Who is a app where the players send the phone around the table voting on who should do the action.
+Who is an app where the players send the phone around the table voting on who should do the action.
 
 <!-- Screenshots -->
 ### :camera: Screenshots
